@@ -1,0 +1,73 @@
+#block access to all php, .db
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /bookmarks/
+
+#redirect http to https, remove www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+
+#prevent other requests
+#RewriteRule ^index.php$ https://%{HTTP_HOST}/mtgmeta/dist/api/$1 [L] 
+#remove index.php from link
+RewriteRule ^index.php$ - [L] 
+
+
+
+#redirect to index
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+
+</IfModule>
+
+
+# block access to error_log
+<files error_log>
+   order allow,deny
+   deny from all
+   Allow from 127.0.0.1
+</files>
+
+#remove direct access to all *.php except index.php
+<Files *.sqlite>
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+</Files>
+#
+<Files index.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files api.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+
+#SetOutputFilter BROTLI_COMPRESS;DEFLATE
+#SetEnvIfNoCase Request_URI \.(?:gif|jpg|png|zip|pdf|rar)$ no-gzip no-brotli dont-vary 
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access 1 month"
+  ExpiresByType image/jpeg "access 1 month"
+  ExpiresByType image/gif "access 1 month"
+  ExpiresByType image/png "access 1 month"
+  ExpiresByType text/css "access 1 month"
+  ExpiresByType text/html "access 1 month"
+  ExpiresByType application/pdf "access 1 month"
+  ExpiresByType text/x-javascript "access 1 month"
+  ExpiresByType application/x-shockwave-flash "access 1 month"
+  ExpiresByType image/x-icon "access 1 year"
+  ExpiresDefault "access 1 month"
+</IfModule>
+
+
+

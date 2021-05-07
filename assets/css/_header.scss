@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  //banner
+  &-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: $black;
+    .logo-text {
+      font-size: calc(0.75vw + 2rem);
+      line-height: calc(0.75vw + 2rem);
+    }
+    .logo-description {
+      font-size: 0.9rem;
+      //margin-left: calc(0.5vw + 2rem);
+    }
+  }
+  //github info
+  &-info {
+    a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 26px;
+      width: 26px;
+      img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+$font: "Poppins", sans-serif;
+
+body,
+html {
+  font-family: $font;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+//modals
+.modal {
+  visibility: hidden;
+  &.open {
+    visibility: visible;
+  }
+}
+
+//css reset
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//reset buttons
+button {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+//font weights
+.f-light {
+  font-weight: 200;
+}
+.f-bold {
+  font-weight: 700;
+}
+.f-black {
+  font-weight: 900;
+}
+//media queries
+@mixin mq($point) {
+  $xs: "(max-width : 0px)";
+  $sm: "(max-width : 540px)";
+  $md: "(max-width : 980px)";
+  $lg: "(min-width : 1600px)";
+  $vl: "(max-width : #{$point}px)";
+
+  @if $point==xs {
+    @media #{$xs} {
+      @content;
+    }
+  } @else if $point==sm {
+    @media #{$sm} {
+      @content;
+    }
+  } @else if $point==md {
+    @media #{$md} {
+      @content;
+    }
+  } @else if $point==lg {
+    @media #{$lg} {
+      @content;
+    }
+  } @else {
+    @media #{$vl} {
+      @content;
+    }
+  }
+}
+
+//box shadow
+@mixin BoxShadow($dp) {
+  @if $dp==0 {
+    box-shadow: none;
+  } @else if $dp==1 {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12),
+      0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  } @else if $dp==2 {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+      0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  } @else if $dp==3 {
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12),
+      0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  } @else if $dp==4 {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+      0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  } @else if $dp==6 {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+      0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  } @else if $dp==8 {
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12),
+      0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  } @else if $dp==9 {
+    box-shadow: 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12),
+      0 5px 6px -3px rgba(0, 0, 0, 0.2);
+  } @else if $dp==12 {
+    box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12),
+      0 7px 8px -4px rgba(0, 0, 0, 0.2);
+  } @else if $dp==16 {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
+      0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  } @else if $dp==24 {
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12),
+      0 11px 15px -7px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin scrollbar() {
+  scrollbar-color: $main rgba($black, 0.1);
+  &::-webkit-scrollbar {
+    background-color: rgba($black, 0.1);
+  }
+  &::-webkit-scrollbar-track-piece {
+    //background-color: rgba($main, 0.3);
+    //border: solid 2px red;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $main;
+  }
+}
+
+//wrapper
+$maxwidth: 1480px;
+.withmargins {
+  max-width: $maxwidth;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 36px;
+  @include mq(md) {
+    padding: 0 12px;
+  }
+  @include mq(lg) {
+    max-width: 1800px;
+  }
+}
+
+//colors
+$white: #fdfdfd;
+$gray: #dfe0e0;
+$black: #030303;
+$main: #f9ba17;
+$link: #22637b;
+$tag: #3686b2;
+$warning: #530808;
+
+body {
+  background-color: $white;
+  min-height: 100vh;
+}
+
+html {
+  //scrollbars
+  @include scrollbar();
+}
