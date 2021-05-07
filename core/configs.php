@@ -4,7 +4,7 @@
 $items_per_page = 25;
 $redis = true;
 $redis_cache_time = 60 * 60 * 24 * 7 * 2; //2 weeks default
-$private = true;
+$private = false;
 $base_path = get_base_url(true) . '/';
 
 //load override configuration

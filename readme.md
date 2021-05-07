@@ -1,11 +1,35 @@
+<!-- vscode-markdown-toc -->
+* 1. [Features](#Features)
+* 2. [Requirements](#Requirements)
+* 3. [Screenshots](#Screenshots)
+* 4. [Instalation](#Instalation)
+	* 4.1. [Easy setup](#Easysetup)
+		* 4.1.1. [Quick run](#Quickrun)
+		* 4.1.2. [With some configuration](#Withsomeconfiguration)
+	* 4.2. [Reset password](#Resetpassword)
+	* 4.3. [Login](#Login)
+* 5. [Libraries used](#Librariesused)
+* 6. [Security notes](#Securitynotes)
+* 7. [Upgrades](#Upgrades)
+* 8. [New features or implementations](#Newfeaturesorimplementations)
+	* 8.1. [Roadmap / PR suggestions](#RoadmapPRsuggestions)
+	* 8.2. [Routes](#Routes)
+	* 8.3. [Custom theme or more javascript](#Customthemeormorejavascript)
+	* 8.4. [CSS customization](#CSScustomization)
+* 9. [Troubleshooting](#Troubleshooting)
 
-![teikirize logo](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/teikirize.png "Teikirize")
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+![teikirize logo](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/teikirize.png "Teikirize")
 
 # Teikirize bookmarks
 
 Your self host solution for bookmarks saving.
 
-> You can see a live version [here](https//bookmarks.josemoreira.pt) (not with admin access).
+> You can see a live version [here](https://bookmarks.josemoreira.pt) (not with admin access).
 
 
 ##  1. <a name='Features'></a>Features
@@ -39,36 +63,36 @@ Redis (optional)
 
 Some context menus (click to view)
 
-[![Sort menu](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/sort_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/sort_menu.jpg)[![view menu](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/view_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/view_menu.jpg)[![Tags edition](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/tags_edition-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/tags_edition.jpg)[![Insert bookmark](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/insert_bookmark-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/insert_bookmark.jpg)
+[![Sort menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/sort_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/sort_menu.jpg)[![view menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/view_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/view_menu.jpg)[![Tags edition](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_edition-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_edition.jpg)[![Insert bookmark](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/insert_bookmark-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/insert_bookmark.jpg)
 
 Administration (click to view)
 
-[![administration](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/administration_zone-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/administration_zone.jpg)
+[![administration](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/administration_zone-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/administration_zone.jpg)
 
 
 Views (click to view)
 
-[![Main view](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/mainview-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/mainview.jpg)[![List view](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/list_view-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/list_view.jpg)[![Private Mode](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/private_mode-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/private_mode.jpg)[![Logged out no bookmarks](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/loggeed_out_nobookmarks-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/loggeed_out_nobookmarks.jpg)
+[![Main view](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/mainview-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/mainview.jpg)[![List view](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/list_view-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/list_view.jpg)[![Private Mode](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/private_mode-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/private_mode.jpg)[![Logged out no bookmarks](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/loggeed_out_nobookmarks-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/loggeed_out_nobookmarks.jpg)
 
 Search examples (click to view)
 
-[![Tags search](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/tags_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/tags_search.jpg)
-[![Text search](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/text_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/text_search.jpg)
+[![Tags search](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_search.jpg)
+[![Text search](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/text_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/text_search.jpg)
 
 
-## Instalation
+##  4. <a name='Instalation'></a>Instalation
 
-###  4. <a name='Easysetup'></a>Easy setup
+###  4.1. <a name='Easysetup'></a>Easy setup
 
-####  4.1. <a name='Quickrun'></a>Quick run
+####  4.1.1. <a name='Quickrun'></a>Quick run
 
 * Just upload all the files to your host.
 * If not on the domain root (e.g. example.com or subdomain.example.com) you will need to edit the .htaccess line `RewriteBase /bookmarks/` to your current path.
 * Open the browser in your domain.tld and insert the admin password.
 
-[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/firstrun.jpg)
+[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun.jpg)
 
-####  4.2. <a name='Withsomeconfiguration'></a>With some configuration
+####  4.1.2. <a name='Withsomeconfiguration'></a>With some configuration
 
 * Edit the /core/configs.php file
 
@@ -85,14 +109,14 @@ $base_path = get_base_url(true) . '/'; //should not change this
 * Uploads all the files to your host (/docs folder can be ignored)
 * Open the browser in your domain.tld and insert the admin password.
 
-[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/master/screenshots/firstrun.jpg)
+[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun.jpg)
 
 
-###  4.3. <a name='Resetpassword'></a>Reset password
+###  4.2. <a name='Resetpassword'></a>Reset password
 
 To reset your password create a file in the root folder named `firstrun` and open your browser on the domain.tld and you will be prompted to set a password.
 
-###  4.4. <a name='Login'></a>Login
+###  4.3. <a name='Login'></a>Login
 
 If you log out, to login in again go to the route `domain.tld/manage` and login again.
 
@@ -103,7 +127,7 @@ If you log out, to login in again go to the route `domain.tld/manage` and login 
 * [Axios](https://github.com/axios/axios) Promise based HTTP client, ajax post
 
 
-##  6. <a name='Security'></a>Security notes
+##  6. <a name='Securitynotes'></a>Security notes
 
 * databases should not be in a "public_html" folder, although the `.htacess` denies access and no directory listing it is a good practice to change the location (update the location accordingly: `core/auth.php` and `core/db.php`)
 * Since I made this to be a single user application, if you are going to change to multi-user bear in mind to double check all the user input.
@@ -114,12 +138,12 @@ I made this mainly to my personal needs, so unless my needs change or someone as
 
 Pull Requests are welcome, nevertheless.
 
-##  8. <a name='DevelopmentorNewimplementations'></a>New features or implementations
+##  8. <a name='Newfeaturesorimplementations'></a>New features or implementations
 
 If you want to make upgrades or changes to fit your needs or even to make a PR
 
 
-###  8.2. <a name='RoadmapPRdevelopmentssuggestions'></a>Roadmap / PR suggestions
+###  8.1. <a name='RoadmapPRsuggestions'></a>Roadmap / PR suggestions
 
 This doesn't mean I will develop them - one day might - but take this as suggestions or things I might do someday.
 
@@ -134,7 +158,7 @@ This doesn't mean I will develop them - one day might - but take this as suggest
 * Better REDIS management
 
 
-###  8.3. <a name='Routes'></a>Routes
+###  8.2. <a name='Routes'></a>Routes
 
 It is pretty easy to add a new route or edit current ones. In the `index.php` file there is an array `$routes` contaning the current routes. Besides the route for 404 and method not allowed you can add new ones following the format:
 
@@ -150,7 +174,7 @@ $routes = [
   ];
 ```
 
-###  8.4. <a name='Customthemeormorejavascript'></a>Custom theme or more javascript
+###  8.3. <a name='Customthemeormorejavascript'></a>Custom theme or more javascript
 
 You can easily add extra `.css` and `.js` files to be loaded when calling the header (`get_header`) by passing the filenames as arguments, the folders for them would be `assets/css/` and `assets/js` respectively:
 
@@ -161,7 +185,7 @@ You can easily add extra `.css` and `.js` files to be loaded when calling the he
   get_header($title,$css,$js);
 ```
 
-### CSS customization
+###  8.4. <a name='CSScustomization'></a>CSS customization
 
 All the .css files are compiled from the .scss and are stored in the `assets/css` folder.
 
