@@ -66,21 +66,21 @@ Redis (optional)
 
 Some context menus (click to view)
 
-[![Sort menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/sort_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/sort_menu.jpg)[![view menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/view_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/view_menu.jpg)[![Tags edition](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_edition-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_edition.jpg)[![Insert bookmark](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/insert_bookmark-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/insert_bookmark.jpg)
+[![Sort menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/sort_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/sort_menu.png)[![view menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/view_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/view_menu.png)[![Tags edition](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_edition-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_edition.png)[![Insert bookmark](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/insert_bookmark-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/insert_bookmark.png)
 
 Administration (click to view)
 
-[![administration](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/administration_zone-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/administration_zone.jpg)
+[![administration](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/administration_zone-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/administration_zone.png)
 
 
 Views (click to view)
 
-[![Main view](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/mainview-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/mainview.jpg)[![List view](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/list_view-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/list_view.jpg)[![Private Mode](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/private_mode-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/private_mode.jpg)[![Logged out no bookmarks](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/logged_out_nobookmarks-th-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/logged_out_nobookmarks-th.jpg)
+[![Main view](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/mainview-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/mainview.png)[![List view](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/list_view-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/list_view.png)[![Private Mode](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/private_mode-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/private_mode.png)[![Logged out no bookmarks](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/logged_out_nobookmarks-th-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/logged_out_nobookmarks-th.png)
 
 Search examples (click to view)
 
-[![Tags search](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_search.jpg)
-[![Text search](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/text_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/text_search.jpg)
+[![Tags search](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_search.png)
+[![Text search](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/text_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/text_search.png)
 
 
 ##  4. <a name='Instalation'></a>Instalation
