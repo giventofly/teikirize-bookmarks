@@ -1,3 +1,10 @@
+# Teikirize bookmarks
+
+Your self host solution for bookmarks saving.
+
+> You can see a live version [here](https://bookmarks.josemoreira.pt) (not with admin access).
+
+
 <!-- vscode-markdown-toc -->
 * 1. [Features](#Features)
 * 2. [Requirements](#Requirements)
@@ -23,13 +30,7 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-![teikirize logo](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/teikirize.png "Teikirize")
-
-# Teikirize bookmarks
-
-Your self host solution for bookmarks saving.
-
-> You can see a live version [here](https://bookmarks.josemoreira.pt) (not with admin access).
+![teikirize logo](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/teikirize.png "Teikirize")
 
 
 ##  1. <a name='Features'></a>Features
@@ -63,21 +64,21 @@ Redis (optional)
 
 Some context menus (click to view)
 
-[![Sort menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/sort_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/sort_menu.jpg)[![view menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/view_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/view_menu.jpg)[![Tags edition](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_edition-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_edition.jpg)[![Insert bookmark](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/insert_bookmark-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/insert_bookmark.jpg)
+[![Sort menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/sort_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/sort_menu.jpg)[![view menu](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/view_menu-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/view_menu.jpg)[![Tags edition](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_edition-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_edition.jpg)[![Insert bookmark](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/insert_bookmark-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/insert_bookmark.jpg)
 
 Administration (click to view)
 
-[![administration](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/administration_zone-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/administration_zone.jpg)
+[![administration](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/administration_zone-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/administration_zone.jpg)
 
 
 Views (click to view)
 
-[![Main view](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/mainview-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/mainview.jpg)[![List view](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/list_view-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/list_view.jpg)[![Private Mode](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/private_mode-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/private_mode.jpg)[![Logged out no bookmarks](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/loggeed_out_nobookmarks-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/loggeed_out_nobookmarks.jpg)
+[![Main view](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/mainview-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/mainview.jpg)[![List view](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/list_view-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/list_view.jpg)[![Private Mode](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/private_mode-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/private_mode.jpg)[![Logged out no bookmarks](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/loggeed_out_nobookmarks-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/loggeed_out_nobookmarks.jpg)
 
 Search examples (click to view)
 
-[![Tags search](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/tags_search.jpg)
-[![Text search](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/text_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/text_search.jpg)
+[![Tags search](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/tags_search.jpg)
+[![Text search](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/text_search-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/text_search.jpg)
 
 
 ##  4. <a name='Instalation'></a>Instalation
@@ -90,7 +91,7 @@ Search examples (click to view)
 * If not on the domain root (e.g. example.com or subdomain.example.com) you will need to edit the .htaccess line `RewriteBase /bookmarks/` to your current path.
 * Open the browser in your domain.tld and insert the admin password.
 
-[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun.jpg)
+[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/firstrun.jpg)
 
 ####  4.1.2. <a name='Withsomeconfiguration'></a>With some configuration
 
@@ -109,7 +110,7 @@ $base_path = get_base_url(true) . '/'; //should not change this
 * Uploads all the files to your host (/docs folder can be ignored)
 * Open the browser in your domain.tld and insert the admin password.
 
-[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/screenshots/firstrun.jpg)
+[![firstrun](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/firstrun-th.jpg)](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/firstrun.jpg)
 
 
 ###  4.2. <a name='Resetpassword'></a>Reset password
