@@ -1,3 +1,6 @@
+![teikirize logo](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/teikirize.png "Teikirize")
+
+
 # Teikirize bookmarks
 
 Your self host solution for bookmarks saving.
@@ -30,7 +33,6 @@ Your self host solution for bookmarks saving.
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-![teikirize logo](https://github.com/giventofly/teikirize-bookmarks/raw/main/assets/screenshots/teikirize.png "Teikirize")
 
 
 ##  1. <a name='Features'></a>Features
