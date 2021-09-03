@@ -701,7 +701,8 @@ const getMediaInfo = debounce(() => {
         let favUrl = response.data.favicon;
         if (!response.data.favicon.includes("http")) {
           favUrl = getHostnameProtocol(document.getElementById("url").value) + favUrl;
-          favUrl = favUrl.replace("//", "/");
+          //this should/can be improved
+          //favUrl = favUrl.replace("//", "/");
         }
         document.getElementById("favicon").value = favUrl;
       }
