@@ -151,19 +151,27 @@ document.addEventListener("DOMContentLoaded", function () {
               searchsuggestions.appendChild(newtag);
             });
           removeAllChildren(textsearchquery);
+          const listOfTags = [];
           matches.forEach((tag) => {
             const newtag = document.createElement("span");
             newtag.innerText = "#" + tag;
             newtag.classList.add("tag");
             textsearchquery.appendChild(newtag);
             //add to tags to search
-            const found = tagsList["list"].find(
-              (elem) => elem.tag.toLowerCase() == tag.toString().toLowerCase()
-            );
-            if (typeof found != "undefined") {
+            let found = null;
+            if(tagsList["list"]){
+              found = tagsList["list"].find(
+                (elem) => elem.tag.toLowerCase() == tag.toString().toLowerCase()
+                );
+              }
+            if (typeof found != "undefined" && found != null) {
+              listOfTags.push(found.tag);
               searchTags.push(found.tag_id);
             }
           });
+          //add tags to url
+          setTagsToUrl(listOfTags);
+
           //catch enter \\ tab to use first suggestion
           //mkae search box
 
@@ -176,6 +184,8 @@ document.addEventListener("DOMContentLoaded", function () {
         textsearchquery.innerText = searchQuery;
         searchresults.classList.remove("hide");
         searchText = searchQuery;
+        //set search query for url
+        setSearchToUrl(searchQuery);
         //search for text, text from search box, debounce, set count to track
       }
     }
@@ -188,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
   searchbox &&
     searchbox.querySelector("button").addEventListener("click", function (e) {
       searchInput.value = "";
+      deleteTagsAndSearch();
       searchbox.classList.remove("suggesting");
       searchbox.classList.remove("clear");
       searchresults.classList.add("hide");
@@ -213,11 +224,12 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         e.preventDefault();
         //select first entry
-        const selectedTag = searchsuggestions.querySelector("p:first-child").innerText;
+        const selectedTag = searchsuggestions.querySelector("p:first-child")  ? searchsuggestions.querySelector("p:first-child").innerText : "";
         const currentValue = searchInput.value;
         let tempArr = currentValue.split("#");
         tempArr.pop();
         searchInput.value = "";
+        deleteTagsAndSearch();
         tempArr.forEach((item) => {
           searchInput.value += item ? `#${item.trim()} ` : "";
         });
@@ -277,8 +289,8 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         e.preventDefault();
         //select first entry
-        const selectedTag = searchsuggestionsbookmark.querySelector("p:first-child")
-          .innerText;
+        const selectedTag =
+          searchsuggestionsbookmark.querySelector("p:first-child").innerText;
         const currentValue = tagsBookmark.value;
         let tempArr = currentValue.split(",");
         tempArr.pop();
@@ -288,8 +300,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         tagsBookmark.value += `${selectedTag}`;
         validateTextInputBookmark();
-        searchsuggestionsbookmark.classList.remove("active");
       }
+      searchsuggestionsbookmark.classList.remove("active");
       if (e.key == "Escape") {
         searchsuggestionsbookmark.classList.remove("active");
       }
@@ -301,4 +313,26 @@ document.addEventListener("DOMContentLoaded", function () {
   //required fields
   const url = document.getElementById("url");
   url && url.addEventListener("input", getMediaInfo);
+  //load tags or search on page load from page url
+  const urlParams = new URLSearchParams(window.location.search);
+  const tags = urlParams.get("tags");
+  const search = urlParams.get("search");
+  if (tags) {
+    tags.split(",").forEach((tag) => {
+      searchInput.value += `#${tag} `;
+    });
+    validateTextInput();
+  }
+  if (search) {
+    searchInput.value = search;
+    validateTextInput();
+  }
+
+  //tags merge
+  const mergeTagBtn = document.getElementById("mergetag");
+  mergeTagBtn && mergeTagBtn.addEventListener("click", function(e){
+    mergeTag(e.target.dataset.tagid,document.getElementById('tagsmergelist').value);
+    //console.log("merge",e.target.dataset.tagid,document.getElementById('tagsmergelist').value);
+  });
+
 });

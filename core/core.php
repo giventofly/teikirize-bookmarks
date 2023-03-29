@@ -303,8 +303,21 @@ function export_bookmarks(){
   $has_more = true;
   $page = 0;
   $bookmarks = [];
+  $all_tags = get_all_tags();
   while($has_more){
     $current_query = get_bookmarks_from_query(true,true,$page,''); 
+    //get tags name from tag id
+    foreach($current_query['bookmarks'] as $bookmark_key => $bookmark){
+      foreach($bookmark['tags'] as $t => $tag_id){
+        //this should not be a loop, but this would be rarely used and I don't want to spend time doing additional queries
+        foreach($all_tags['list'] as $tag_key => $tag){
+          if($tag['tag_id'] == $tag_id){
+            $current_query['bookmarks'][$bookmark_key]['tags'][$t] = $tag['tag'];
+          }
+        }
+      }
+      
+    }
     $bookmarks = array_merge($bookmarks,$current_query['bookmarks']);
     $page++;
     $has_more = $current_query['has_more'];
@@ -393,3 +406,4 @@ function secondsToTime($seconds) {
   $dtT = new \DateTime("@$seconds");
   return $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
 }
+

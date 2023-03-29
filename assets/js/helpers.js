@@ -11,6 +11,8 @@ let hasMore = 1;
 let isFetching = false;
 let minWindowHeight = 0;
 let threshold = 200;
+//read from localstorage cloudflare counter, if null set to 0
+let cloudflareBuster = localStorage.getItem("cloudflareBuster") || 0;
 
 //get current user settings
 const getCurrentUserSettings = () => {
@@ -279,6 +281,7 @@ const getBookmarks = async () => {
     order: orderMode,
     page: currentPage,
     tags: searchTags ? searchTags.join(",") : searchTags,
+    cloudflareBuster
   };
   //search text
   searchText ? (params.query = searchText) : null;
@@ -408,6 +411,15 @@ const saveBookmark = (e) => {
         toastMessage("Refresh to see the changes");
         resetBookmarkModal();
         closeOpenModals();
+        //increase cloudflareBuster + 1 and store in localstorage
+        const cloudflareBuster = localStorage.getItem("cloudflareBuster");
+        if (cloudflareBuster) {
+          localStorage.setItem("cloudflareBuster", parseInt(cloudflareBuster) + 1);
+        } 
+        else {
+          localStorage.setItem("cloudflareBuster", 1);
+        }
+
       }
       if (response.data == -1) {
         toastMessage("Invalid url");
@@ -445,6 +457,11 @@ const makeTag = (tag) => {
             <img src="${base_url}/assets/icons/trash.svg" alt="">
             delete
           </div>
+          <!-- merge -->
+          <div class="option merge" data-tagid="${tag.tag_id}" data-tagname="${tag.tag}">
+            <img src="${base_url}/assets/icons/merge.svg" alt="">
+            merge
+          </div>
         </div>
       </div>
       <!-- close tag -->
@@ -481,6 +498,14 @@ const makeTag = (tag) => {
         if (response.data) {
           elem.remove();
           toastMessage("Deleted successfully");
+          //increase cloudflareBuster + 1 and store in localstorage
+          const cloudflareBuster = localStorage.getItem("cloudflareBuster");
+          if (cloudflareBuster) {
+            localStorage.setItem("cloudflareBuster", parseInt(cloudflareBuster) + 1);
+          } 
+          else {
+            localStorage.setItem("cloudflareBuster", 1);
+          }
         } else {
           toastMessage("Error, something went wrong:" + response.data);
         }
@@ -533,13 +558,34 @@ const makeTag = (tag) => {
         });
     });
   });
+  //merge
+  elem.querySelector(".menu-options .merge").addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeMenuModals();
+    closeOpenModals();
+    //open merge tag modal
+    const modal = document.getElementById("tagsmergemodal");
+    modal.classList.add("open");
+    const tagname  = document.getElementById("tagname");
+    tagname.innerText = e.target.dataset.tagname;
+    //get tag id
+    const tagid = e.target.dataset.tagid;
+    //set merge button with tag id
+    const mergebtn = document.getElementById("mergetag");
+    mergebtn.dataset.tagid = tagid;
+  });
+    
   //return tag elem
   return elem;
 };
 //populate tags
 const populateTags = () => {
+  //list to edit
   const tagslistelem = document.getElementById("tagslist");
   removeAllChildren(tagslistelem);
+  //list to merge
+  const tagslistMerge = document.getElementById("tagsmergelist");
+  removeAllChildren(tagslistMerge);
   //tagslistelem.addEventListener('click', closeMenuModals);
   //console.log("here");
   if (
@@ -549,8 +595,13 @@ const populateTags = () => {
   ) {
     tagsList.list.forEach((tag) => {
       tagslistelem.appendChild(makeTag(tag));
+      //create option and attach to merge list
+      const option = document.createElement("option");
+      option.value = tag.tag_id;
+      option.innerText = tag.tag;
+      tagslistMerge.appendChild(option);
     });
-  }
+    }
 };
 //start infinite scroll mode
 const infiniteScroll = async (elem = null) => {
@@ -717,3 +768,110 @@ const getMediaInfo = debounce(() => {
       console.log(error);
     });
 }, 600);
+
+//get url params
+const getUrlParams = () => {
+  const url = window.location.href;
+  let params = {};
+  url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (str, key, value) {
+    params[key] = value;
+  });
+  return params;
+}
+//get tags from url params
+const getTagsFromUrl = () => {
+  let params = getUrlParams();
+  if (params.tags) {
+    return params.tags.split(",");
+  }
+  return [];
+}
+//get search query from url params
+const getSearchFromUrl = () => {
+  let params = getUrlParams();
+  if (params.search) {
+    return params.search;
+  }
+  return "";
+}
+//set tags to url params
+const setTagsToUrl = (tags) => {
+  let url = new URL(window.location.href);
+  if (tags.length) {
+    url.searchParams.set("tags", tags.join(","));
+    //remove search query
+    url.searchParams.delete("search");
+  } else {
+    url.searchParams.delete("tags");
+  }
+  window.history.pushState({}, "", url);
+}
+//delete tags and search params
+const deleteTagsAndSearch = () => {
+  //console.log("delete tags and search");
+  let url = new URL(window.location.href);
+  url.searchParams.delete("tags");
+  url.searchParams.delete("search");
+  window.history.pushState({}, "", url);
+}
+
+//set search to url params
+const setSearchToUrl = (search) => {
+  let url = new URL(window.location.href);
+  if (search) {
+    url.searchParams.set("search", search);
+    //remove tags
+    url.searchParams.delete("tags");
+  } else {
+    url.searchParams.delete("search");
+  }
+  window.history.pushState({}, "", url);
+}
+//merge tag
+const mergeTag = (from,to) => {
+  //check if they are the same
+  if(from == to){
+    toastMessage("You can't merge a tag with itself");
+    return;
+  }
+  const params = {
+    from,
+    to,
+    merge_tags: true,
+  };
+  const formData = new FormData();
+  Object.keys(params).forEach((key) => {
+    formData.append(key, params[key]);
+  });
+  axios
+    .post(`${base_url}/api/manage`, formData, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    })
+    .then(function (response) {
+      if (response.data.success) {
+        //delete from  select #tagsmergelist option with value from
+        const select = document.querySelector("#tagsmergelist option[value='"+from+"']");
+        select.parentNode.removeChild(select);
+        //delete from tagslist with dataset tagid to
+        const tag = document.querySelector("#tagslist .tag[data-tagid='"+to+"']");
+        tag.parentNode.removeChild(tag);
+        //force cache clear
+        const cloudflareBuster = localStorage.getItem("cloudflareBuster");
+        if (cloudflareBuster) {
+          localStorage.setItem("cloudflareBuster", parseInt(cloudflareBuster) + 1);
+        } 
+        else {
+          localStorage.setItem("cloudflareBuster", 1);
+        }
+        closeOpenModals();
+        toastMessage("Refresh to see bookmark changes");
+      } else {
+        toastMessage("Error, something went wrong: " + response.data.error);
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}

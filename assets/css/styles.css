@@ -1184,7 +1184,8 @@ html::-webkit-scrollbar-thumb {
   }
 }
 
-#tagsmodal {
+#tagsmodal,
+#tagsmergemodal {
   -webkit-box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.2);
           box-shadow: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.2);
   width: 90%;
@@ -1219,33 +1220,39 @@ html::-webkit-scrollbar-thumb {
   scrollbar-color: #f9ba17 rgba(3, 3, 3, 0.1);
 }
 
-#tagsmodal::-webkit-scrollbar {
+#tagsmodal::-webkit-scrollbar,
+#tagsmergemodal::-webkit-scrollbar {
   background-color: rgba(3, 3, 3, 0.1);
 }
 
-#tagsmodal::-webkit-scrollbar-thumb {
+#tagsmodal::-webkit-scrollbar-thumb,
+#tagsmergemodal::-webkit-scrollbar-thumb {
   background-color: #f9ba17;
 }
 
-#tagsmodal.open {
+#tagsmodal.open,
+#tagsmergemodal.open {
   opacity: 1;
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
 }
 
-#tagsmodal .text {
+#tagsmodal .text,
+#tagsmergemodal .text {
   opacity: 0.9;
   padding-left: 24px;
   font-size: 0.9rem;
 }
 
-#tagsmodal button.close {
+#tagsmodal button.close,
+#tagsmergemodal button.close {
   position: absolute;
   top: 14px;
   right: 14px;
 }
 
-#tagsmodal button.close img {
+#tagsmodal button.close img,
+#tagsmergemodal button.close img {
   pointer-events: none;
   height: 14px;
   width: 14px;
@@ -1254,7 +1261,8 @@ html::-webkit-scrollbar-thumb {
      object-fit: contain;
 }
 
-#tagsmodal .list {
+#tagsmodal .list,
+#tagsmergemodal .list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1274,7 +1282,8 @@ html::-webkit-scrollbar-thumb {
   overflow-y: auto;
 }
 
-#tagsmodal .list .tag {
+#tagsmodal .list .tag,
+#tagsmergemodal .list .tag {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1290,15 +1299,18 @@ html::-webkit-scrollbar-thumb {
   padding: 6px 24px;
 }
 
-#tagsmodal .list .tag:hover {
+#tagsmodal .list .tag:hover,
+#tagsmergemodal .list .tag:hover {
   background-color: rgba(54, 134, 178, 0.1);
 }
 
-#tagsmodal .list .tag:last-child {
+#tagsmodal .list .tag:last-child,
+#tagsmergemodal .list .tag:last-child {
   margin-bottom: 0;
 }
 
-#tagsmodal .list .tag div.options.btn {
+#tagsmodal .list .tag div.options.btn,
+#tagsmergemodal .list .tag div.options.btn {
   margin-left: auto;
   cursor: pointer;
   border: none;
@@ -1316,7 +1328,8 @@ html::-webkit-scrollbar-thumb {
   position: relative;
 }
 
-#tagsmodal .list .tag div.options.btn img.option-menu-image {
+#tagsmodal .list .tag div.options.btn img.option-menu-image,
+#tagsmergemodal .list .tag div.options.btn img.option-menu-image {
   height: 16px;
   width: 16px;
   -o-object-fit: contain;
@@ -1324,15 +1337,18 @@ html::-webkit-scrollbar-thumb {
   pointer-events: none;
 }
 
-#tagsmodal .list .tag span {
+#tagsmodal .list .tag span,
+#tagsmergemodal .list .tag span {
   margin-right: 6px;
 }
 
-#tagsmodal .list .tag input {
+#tagsmodal .list .tag input,
+#tagsmergemodal .list .tag input {
   display: none;
 }
 
-#tagsmodal .list .tag .tag-wrap {
+#tagsmodal .list .tag .tag-wrap,
+#tagsmergemodal .list .tag .tag-wrap {
   margin-top: 0;
   margin-top: 0;
   font-size: 0.7rem;
@@ -1355,18 +1371,78 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 980px) {
-  #tagsmodal .list .tag .tag-wrap {
+  #tagsmodal .list .tag .tag-wrap,
+  #tagsmergemodal .list .tag .tag-wrap {
     font-size: 0.7rem;
   }
 }
 
-#tagsmodal .list .tag.edit input {
+#tagsmodal .list .tag.edit input,
+#tagsmergemodal .list .tag.edit input {
   display: inline-block;
   width: 100%;
 }
 
-#tagsmodal .list .tag.edit .tag-name {
+#tagsmodal .list .tag.edit .tag-name,
+#tagsmergemodal .list .tag.edit .tag-name {
   display: none;
+}
+
+#tagsmergemodal {
+  padding: 18px;
+  max-width: 400px;
+}
+
+#tagsmergemodal .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 24px;
+}
+
+#tagsmergemodal .text div {
+  margin: 0 6px;
+  opacity: 0.8;
+}
+
+#tagsmergemodal .block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#tagsmergemodal .block button {
+  border: solid 2px #f9ba17;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-top: 24px;
+}
+
+#tagsmergemodal .block select {
+  width: 100%;
+  margin-top: 12px;
+  padding: 6px 12px;
 }
 
 body.loggedout #buttons-wrapper #addtag,
@@ -1646,4 +1722,3 @@ body.loggedout .bookmark .options span {
 footer {
   padding-top: 100px;
 }
-/*# sourceMappingURL=styles.css.map */

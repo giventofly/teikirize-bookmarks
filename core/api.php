@@ -75,6 +75,21 @@ function api_call($what=null){
         $id = intval($_POST['id']);
         $response = delete_tag($id);
       }
+      //merge tags from and to
+      if(isset($_POST['merge_tags']) && 
+         isset($_POST['from']) &&
+         isset($_POST['to'])
+        ){
+        $from = intval($_POST['from']);
+        $to = intval($_POST['to']);
+        //debugme($from,$to);
+        if(merge_tags($from,$to)){
+          $response = ['success'=>true];
+        }
+        else {
+          $response = ['error'=> 'something went wrong'];
+        }
+      }
       //delete bookmark
       if(isset($_POST['delete_bookmark']) && isset($_POST['uuid'])){
         $uuid = $_POST['uuid'];

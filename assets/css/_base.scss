@@ -748,7 +748,8 @@
   }
 }
 //edit tags
-#tagsmodal {
+#tagsmodal,
+#tagsmergemodal {
   @include BoxShadow(12);
   width: 90%;
   max-width: 320px;
@@ -870,6 +871,47 @@
         .tag-name {
           display: none;
         }
+      }
+    }
+  }
+  select.slist {
+  }
+}
+
+#tagsmergemodal {
+  padding: 18px;
+  max-width: 400px;
+  .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    div {
+      margin: 0 6px;
+      opacity: 0.8;
+    }
+  }
+  .block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    button {
+      border: solid 2px $main;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-top: 24px;
+    }
+    select {
+      width: 100%;
+      margin-top: 12px;
+      padding: 6px 12px;
+      option {
       }
     }
   }

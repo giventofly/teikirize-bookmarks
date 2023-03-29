@@ -130,8 +130,19 @@
   </button>
   <div class="text">Edit tags</div>
   <div class="list" id="tagslist">
-    
     <!-- list end -->
+  </div>
+</div>
+<!-- tags merge -->
+<div id="tagsmergemodal" class="modal">
+  <button class="close btn">
+    <img src="<?php echo get_base_url(); ?>/assets/icons/close.svg" alt="">
+  </button>
+  <div class="text">Merge <div id="tagname"></div> into</div>
+  <div class="block">
+    <select class="slist" id="tagsmergelist">
+      </select>
+      <button class="btn save f-bold" id="mergetag" >Merge</button>
   </div>
 </div>
 <!-- toast message -->

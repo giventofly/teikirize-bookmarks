@@ -49,7 +49,7 @@ if(is_logged_in()){
     <p>Max items <span><?php echo $server_info['MAX ITEMS']; ?></span></p>
     <p>Total bookmarks <span><?php echo $server_info['TOTAL BOOKMARKS']; ?></span></p>
     <p>Total tags <span><?php echo $server_info['TOTAL TAGS']; ?></span></p>
-    <p class="action">Put the <span>bookmarks.json</span> file in the database folder and click <a href="">here</a> to import them.</p>
+    <p class="action">Put the <span>bookmarks.json</span> file in the database folder and click <a href="?import">here</a> to import them.</p>
     <p>To export your bookmarks to a <span>json</span> file, click <a href="<?php echo get_base_url(); ?>/api/export" target="_blank">here</a></p>
   <?php
     //form change password

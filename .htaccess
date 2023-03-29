@@ -12,7 +12,6 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 
 #prevent other requests
-#RewriteRule ^index.php$ https://%{HTTP_HOST}/mtgmeta/dist/api/$1 [L] 
 #remove index.php from link
 RewriteRule ^index.php$ - [L] 
 

@@ -72,11 +72,12 @@ function get_tag_from_name($name='tag'){
     if($tag_id){ return $tag_id; }
   }
 	$params = [
-    ':tag' => $name,
+    
+    ':tag' => strtolower($name),
   ];
   $sql = "SELECT tag_id
             FROM tags
-          WHERE tag = :tag";
+          WHERE lower(tag) = :tag";
   [$db,$result] = askBD($sql,$params);
   while ($row = $result->fetchArray()){
     if(REDIS){
@@ -587,4 +588,19 @@ function get_bookmarks_tags_stats(){
     ];
   }
   return $stats;
+}
+//*** merge tags */
+function merge_tags($from_tag_id,$tag_id_to_merge){
+  //check if they are the same
+  if($from_tag_id == $tag_id_to_merge){ return false; }
+  $sql = "UPDATE bookmarks_tags SET tag_id = :to_tag_id WHERE tag_id = :from_tag_id";
+  [$db,$result]= askBD($sql,[':to_tag_id' => $tag_id_to_merge,':from_tag_id' => $from_tag_id]);
+  $sql = "DELETE FROM tags WHERE tag_id = :tag_id";
+  [$db,$result]= askBD($sql,[':tag_id' => $from_tag_id]);
+  if(REDIS){
+    bustRedisKeys('bookmarks');
+    bustRedisKeys('tags');
+    bustRedisKeys('tag_name');
+  }
+  return true;
 }

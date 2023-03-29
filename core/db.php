@@ -47,7 +47,7 @@ function setRedisKey($type='main',$sub='',$values=[],$ttl=0){
     }
     else {
       $redis->set($key, serialize($values));
-      $redis->expire($key,60*60*24*7);
+      $redis->expire($key,60*60*24*2);
     }
     $redis->close();
   }
