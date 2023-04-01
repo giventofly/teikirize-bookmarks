@@ -171,7 +171,7 @@ function get_media_from_url($url=""){
     "favicon" => '',
     'images_src' => [],
   ];
-  if(!filter_var($url, FILTER_VALIDATE_URL,FILTER_FLAG_HOST_REQUIRED) || !preg_match("#^https?://.+#", $url)){
+  if(!filter_var($url, FILTER_VALIDATE_URL) || !preg_match("#^https?://.+#", $url)){
     return $output;
   }
   //vars

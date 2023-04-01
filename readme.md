@@ -71,6 +71,11 @@ You can replace all files except the `database` folder and update the `/core/con
 
 ##  4. <a name='Changelog'></a>Changelog
 
+
+#### 1 April 2023
+
+* removed  FILTER_FLAG_HOST_REQUIRED from url validation for php8.2 compatibility
+
 ####  4.1. <a name='March2023'></a>29 March 2023
 
 
